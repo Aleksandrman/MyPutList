@@ -11,15 +11,7 @@ public class GenerateRoutes {
 	private ArrayList<String> address = new ArrayList<String>();
 	private static ArrayList<PairAddress> route = new ArrayList<PairAddress>();
 public ArrayList getAddress(){
-	try {
-		BufferedReader bf = new BufferedReader(new FileReader(new File("address")));
-		while(bf.ready()) {
-		address.add(bf.readLine());
-				}
-		bf.close();
-	} catch (IOException e) {
-		
-	}
+	address = parce.LoadAddress.getaddress();
 	for(int i = 0; i<address.size();i++) {
 		for(int j = i+1; j <address.size(); j++) {
 			String a = address.get(i).substring(0, 6);
