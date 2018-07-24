@@ -12,8 +12,11 @@ import loadDB.ChekAddress;
 
 public class main_test {
 public static void main(String[] args) throws IOException, InterruptedException {
-//	Thread th = new Thread(new Parce());
-//	th.start();
+	Parce p = new Parce();
+	Thread th = new Thread(p);
+	th.start();
+	 
+	
 	
 //	DeleteDubleAddress da =new DeleteDubleAddress();
 //	da.deleteDubleAddress();

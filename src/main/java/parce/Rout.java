@@ -1,6 +1,6 @@
 package parce;
 
-class Rout {
+public class Rout {
 private String a;
 private String b;
 private String dist;

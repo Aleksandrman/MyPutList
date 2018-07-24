@@ -6,9 +6,13 @@ import java.util.ArrayList;
 import org.getDistance.GetDistAndTime;
 import org.json.JSONException;
 
+import loadDB.LoadRoute;
+
 public class Parce extends Thread{
 	private GetDistAndTime dist = new GetDistAndTime();
 	private ArrayList<PairAddress> routeArr = new ArrayList<PairAddress>();
+	private ArrayList<Rout> route = new ArrayList<Rout>();
+	
 	private GenerateRoutes gr = new GenerateRoutes();
 
 	/* (non-Javadoc)
@@ -45,7 +49,8 @@ for (PairAddress pair : routeArr) {
 			System.err.println("ОПС!!!");
 			
 		}
-		System.out.println(dist.getDist() + " " +dist.getTime()+ " " +a+" "	+b);
+		route.add(new Rout(a, b, dist.getDist(), dist.getTime()));
+		System.out.println(a  + " "  +b+ " "+ dist.getDist() + " "+dist.getTime());
 	
 			try {
 				sleep(100);
@@ -55,5 +60,14 @@ for (PairAddress pair : routeArr) {
 			}
 
 	}
+	
+	LoadRoute lr = new LoadRoute();
+	lr.loadRout(route);
+	
+	
+	}
+
+	public ArrayList<Rout> getRoute() {
+		return route;
 	}
 }

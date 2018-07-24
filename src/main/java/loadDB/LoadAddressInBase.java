@@ -20,7 +20,7 @@ public class LoadAddressInBase {
 	 public static void main(String[] args) throws ClassNotFoundException, SQLException {
 		 ArrayList<String> address = parce.LoadAddress.getaddress(); 
 		 
-		 System.out.println(address);
+		
 		 Class.forName("com.mysql.cj.jdbc.Driver");
 		  Connection con = DriverManager.getConnection(url,username,password);
 		  Statement st = con.createStatement();
